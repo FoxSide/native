@@ -1,4 +1,4 @@
-console.log('lesson 2');
+console.log('LESSON 2');
 
 // Lexical environment
 // http://jsflow.org/docs/lex-env/
@@ -20,11 +20,14 @@ console.log('lesson 2');
 // https://learn.javascript.ru/recursion
 // https://www.youtube.com/watch?v=Kuq6oIN3PH0
 
-
-// Task 01
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
-
-// Task 02
+console.log('Task 01')
+const sum = (n: number) => {
+  return (n2: number) => {
+    return n + n2
+  }
+}
+console.log(sum(3)(6))
 // Реализовать функцию makeCounter которая работает следующим образом:
 // const counter = makeCounter();
 // counter(); // 1
@@ -32,14 +35,46 @@ console.log('lesson 2');
 // const counter2 = makeCounter();
 // counter2(); // 1
 // counter(); // 3
-
-// Task 03
+console.log('Task 02')
+const makeCounter = () => {
+  let count = 0
+  return () => {
+    return ++count
+  }
+}
+const counter = makeCounter();
+console.log(counter()); // 1
+console.log(counter()); // 2
+const counter2 = makeCounter();
+console.log(counter2()); // 1
+console.log(counter()); // 3
 // Переписать функцию из Task 02 так, что бы она принимала число в качестве аргумента и это число было стартовым значением счетчика
 // и возвращала следующий объект методов:
 // increase: +1
 // decrease: -1
 // reset: установить счетчик в 0;
 // set: установить счетчик в заданное значение;
+// console.log('Task 03')
+// const makeCounter1 = (n: number) => {
+//   let count = n
+//   return () => {
+//     return {
+//       increase: count +=1,
+//     }
+//     // {
+//     //   increase: count + 1,
+//     //   decrease: count - 1,
+//     //   reset: count = 0,
+//     //   set: (a: number) => {
+//     //     count = a
+//     //   }
+//     // }
+//   }
+// }
+// const counter1 = makeCounter1(5)
+// console.log(counter1().increase)
+// console.log(counter1().increase)
+// console.log(counter1().increase)
 
 // Task 04*
 // Реализовать функцию superSum которая принимает число в качестве аргумента, которое указывает на количество слагаемых
@@ -60,4 +95,5 @@ console.log('lesson 2');
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
 
 // just a plug
-export default () => {};
+export default () => {
+}
